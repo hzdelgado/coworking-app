@@ -1,4 +1,15 @@
 {
-    "WELCOME_MESSAGE": "Welcome to Coworking App!",
-    "CHANGE_LANGUAGE": "Change Language"
+    "NAV": {
+      "HOME": "Home",
+      "EXPLORE": "Explore",
+      "ADMIN": "Admin"
+    },
+    "USER": {
+      "BOOK_NOW": "Book Now",
+      "CHECK_AVAILABILITY": "Check Availability"
+    },
+    "ADMIN": {
+      "ADD_SPACE": "Add Space",
+      "MANAGE_BOOKINGS": "Manage Bookings"
+    }
   }

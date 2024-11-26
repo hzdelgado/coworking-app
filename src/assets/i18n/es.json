@@ -1,4 +1,16 @@
 {
-    "WELCOME_MESSAGE": "¡Bienvenido a la aplicación Coworking!",
-    "CHANGE_LANGUAGE": "Cambiar idioma"
+    "NAV": {
+      "HOME": "Inicio",
+      "EXPLORE": "Explorar",
+      "ADMIN": "Administración"
+    },
+    "USER": {
+      "BOOK_NOW": "Reservar ahora",
+      "CHECK_AVAILABILITY": "Verificar disponibilidad"
+    },
+    "ADMIN": {
+      "ADD_SPACE": "Agregar Espacio",
+      "MANAGE_BOOKINGS": "Gestionar Reservas"
+    }
   }
+  
