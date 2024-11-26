@@ -1,6 +1,8 @@
 export interface Booking {
-    id: number;
-    name: string;
-    capacity: number;
+    id: string;
+    coworkingSpace: string;
+    room: string;
+    date: string;
+    time: string;
   }
   

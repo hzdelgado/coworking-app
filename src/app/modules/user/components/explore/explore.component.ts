@@ -1,18 +1,31 @@
 // src/app/modules/user/components/explore/explore.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { selectAllBookings, selectLoading } from '../../../../store/selectors/bookings.selectors';
+import * as BookingActions from '../../../../store/actions/bookings.actions';
 
 @Component({
   selector: 'app-explore',
   template: `
-    <mat-toolbar>
-      <span>{{ 'NAV.EXPLORE' | translate }}</span>
-    </mat-toolbar>
-    <div class="explore-container">
-      <h2>{{ 'USER.BOOK_NOW' | translate }}</h2>
-      <button mat-raised-button color="primary">{{ 'USER.CHECK_AVAILABILITY' | translate }}</button>
-    </div>
-  `,
-  styles: ['.explore-container { text-align: center; margin-top: 20px; }']
+    <div *ngIf="loading$ | async">Loading...</div>
+    <ul>
+      <li *ngFor="let booking of bookings$ | async">
+        {{ booking.coworkingSpace }} - {{ booking.room }}
+      </li>
+    </ul>
+  `
 })
-export class ExploreComponent {}
+export class ExploreComponent implements OnInit {
+  bookings$: Observable<any[]>;
+  loading$: Observable<boolean>;
+
+  constructor(private store: Store) {
+    this.bookings$ = this.store.select(selectAllBookings);
+    this.loading$ = this.store.select(selectLoading);
+  }
+
+  ngOnInit() {
+    this.store.dispatch(BookingActions.loadBookings());
+  }
+}
