@@ -2,6 +2,19 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.1.
 
+## Estructura
+
+````src/
+└── app/
+    ├── core/                # Servicios globales
+    ├── shared/              # Componentes y módulos compartidos
+    ├── features/            # Módulos funcionales
+    │   ├── reservations/    # Gestión de reservas
+    │   └── spaces/          # Gestión de espacios
+    ├── store/               # Estado global con NgRx
+    └── app.config.ts        # Configuración del standalone
+````
+
 ## Development server
 
 To start a local development server, run:
