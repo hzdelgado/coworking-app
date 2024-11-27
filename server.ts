@@ -1,45 +1,60 @@
-import 'zone.js/dist/zone-node';
+console.log('Server file is running...');
+import 'zone.js/node';
+import { enableProdMode } from '@angular/core';
 import { ngExpressEngine } from '@nguniversal/express-engine';
-import * as express from 'express';
+import { AppServerModule } from './src/app/app.server.module';
 import { join } from 'path';
+import express from 'express';
 import { existsSync } from 'fs';
-import { AppServerModule } from './src/main.server';
+import dotenv from 'dotenv';
 
-export function app(): express.Express {
-  const server = express();
-  const distFolder = join(process.cwd(), 'dist/coworking-app/browser');
-  const indexHtml = existsSync(join(distFolder, 'index.original.html'))
-    ? 'index.original.html'
-    : 'index';
+process.on('uncaughtException', (err) => {
+  console.error('Error no capturado:', err);
+});
+process.on('unhandledRejection', (reason) => {
+  console.error('Promesa rechazada sin manejar:', reason);
+});
 
-  server.engine('html', ngExpressEngine({
-    bootstrap: AppServerModule,
-  }));
+dotenv.config();
+enableProdMode();
 
-  server.set('view engine', 'html');
-  server.set('views', distFolder);
+const app = express();
+const distFolder = join(process.cwd(), 'dist/coworking-app/browser');
+const indexHtml = existsSync(join(distFolder, 'index.html')) ? 'index.html' : '404.html';
 
-  server.get('*.*', express.static(distFolder, {
-    maxAge: '1y',
-  }));
+app.engine('html', ngExpressEngine({
+  bootstrap: AppServerModule
+}));
 
-  server.get('*', (req, res) => {
-    res.render(indexHtml, { req });
-  });
+app.set('view engine', 'html');
+app.set('views', distFolder);
 
-  return server;
-}
+app.get('*.*', express.static(distFolder, {
+  maxAge: '1y'
+}));
 
-function run() {
-  const port = process.env.PORT || 4000;
-  const server = app();
-  server.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-  });
-}
+app.get('*', (req, res) => {
+  console.log(`Petición recibida: ${req.originalUrl}`);
+  res.render(indexHtml, { req });
+});
 
-declare const __non_webpack_require__: NodeRequire;
+const port = process.env['PORT'] || 4000;
+app.listen(port, () => {
+  console.log(`Node server listening on http://localhost:${port}`);
+}).on('error', (err) => {
+  console.error('Error al iniciar el servidor:', err);
+});
+/*
+import * as express from 'express';
 
-if (require.main === module) {
-  run();
-}
+const app = express();
+
+app.get('*', (req, res) => {
+  console.log('Petición recibida');
+  res.send('Hello World');
+});
+
+const port = 4001;
+app.listen(port, () => {
+  console.log(`Servidor Express en http://localhost:${port}`);
+});*/

@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/coworking-app/server",
+    "target": "ES2015",  // Es recomendable usar ES2020 o ESNext
+    "module": "ES2020",  // Usamos CommonJS para la compatibilidad con Node.js
+    "moduleResolution": "node",  // Asegura que los módulos se resuelvan correctamente
+    "experimentalDecorators": true,
+    "esModuleInterop": true,  // Para la compatibilidad de módulos ECMAScript
+    "resolveJsonModule": true,
+    "noEmit": false,  // Permite la salida de los archivos JS
+    "strict": false,  // Asegura que todos los checks estrictos estén activados
+    "skipLibCheck": true  // Esto puede ayudar a evitar problemas con las definiciones de librerías
+  },
+  "include": [
+    "src/main.server.ts",        // Asegúrate de que este sea el punto de entrada del servidor.
+    "src/app/**/*.ts",           // O cualquier otro archivo que necesite ser incluido
+    "src/environments/**/*.ts"   // Si es necesario incluir archivos del entorno
+  ],
+  "exclude": [
+    "node_modules"  // Excluir node_modules para no incluir dependencias de forma innecesaria
+  ]
+}
