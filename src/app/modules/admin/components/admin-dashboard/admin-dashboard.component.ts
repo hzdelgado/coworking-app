@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-admin-dashboard',
   template: `
     <mat-toolbar>
       <span>{{ 'NAV.ADMIN' | translate }}</span>
@@ -14,4 +14,5 @@ import { Component } from '@angular/core';
   `,
   styles: ['.dashboard-container { text-align: center; margin-top: 20px; }']
 })
-export class DashboardComponent {}
+export class AdminDashboardComponent {
+}

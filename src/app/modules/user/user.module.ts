@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 import { SharedModule } from '../../shared/shared.module';
-import { ExploreComponent } from './components/explore/explore.component';
 import { BookingComponent } from './components/booking/booking.component';
+import { ExploreAvailabilityComponent } from './components/explore-availability/explore-availability.component';
 
 @NgModule({
-  declarations: [ExploreComponent, BookingComponent],
+  declarations: [ExploreAvailabilityComponent, BookingComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
     SharedModule
-  ]
+  ],
+
+  exports: [ExploreAvailabilityComponent, BookingComponent]
 })
 export class UserModule {}

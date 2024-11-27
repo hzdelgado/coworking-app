@@ -1,11 +1,11 @@
 // src/app/modules/user/user-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ExploreComponent } from './components/explore/explore.component';
+import { ExploreAvailabilityComponent } from './components/explore-availability/explore-availability.component';
 import { BookingComponent } from './components/booking/booking.component';
 
 const routes: Routes = [
-  { path: '', component: ExploreComponent },
+  { path: '', component: ExploreAvailabilityComponent },
   { path: 'booking', component: BookingComponent }
 ];
 
