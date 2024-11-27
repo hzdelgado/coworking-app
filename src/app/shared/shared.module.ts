@@ -1,6 +1,5 @@
 // src/app/shared/shared.module.ts
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,11 +13,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatNativeDateModule } from '@angular/material/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
-    CommonModule,
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
@@ -46,7 +43,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule,
     MatNativeDateModule,
     TranslateModule,
-    BrowserAnimationsModule
   ]
 })
 export class SharedModule {}

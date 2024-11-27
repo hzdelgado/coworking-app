@@ -1,7 +1,4 @@
-import { provideRouter } from '@angular/router';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
-import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -29,7 +26,6 @@ export const appConfig = {
   providers: [
     provideStore({ bookings: bookingsReducer }),
     provideHttpClient(),
-    provideRouter(routes), 
     provideAnimations(),
   ]
 };

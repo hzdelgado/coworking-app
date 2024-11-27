@@ -4,15 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { AdminModule } from './modules/admin/admin.module';
 import { UserModule } from './modules/user/user.module';
 import { HttpLoaderFactory } from './app.config';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { routes } from './app.routes';
 import { bookingsReducer } from './store/reducers/bookings.reducers';
 import { StoreModule } from '@ngrx/store';
+import { AppRoutingModule } from './app.routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { StoreModule } from '@ngrx/store';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    AppRoutingModule,
     MatToolbarModule, 
     MatButtonModule,
     StoreModule.forRoot({ bookings: bookingsReducer }),

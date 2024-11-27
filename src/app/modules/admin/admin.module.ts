@@ -15,6 +15,5 @@ import { bookingsReducer } from '../../store/reducers/bookings.reducers';
     SharedModule,
     StoreModule.forFeature('bookings', bookingsReducer),
   ],
-  exports: [AdminDashboardComponent]
 })
 export class AdminModule {}
