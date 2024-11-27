@@ -9,9 +9,7 @@
     "clean": "rimraf dist node_modules && npm cache clean --force",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "build:ssr": "ng build --configuration=production && ng run coworking-app:server:production",
-    "serve:ssr": "node dist/coworking-app/server/main.js"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -32,12 +30,10 @@
     "@ngrx/entity": "^15.4.0",
     "@ngrx/store": "^15.4.0",
     "@ngrx/store-devtools": "^15.4.0",
-    "@nguniversal/express-engine": "^15.2.0",
     "@ngx-translate/core": "~14.0.0",
     "@ngx-translate/http-loader": "~7.0.0",
     "debug": "^4.3.7",
     "dotenv": "^16.4.5",
-    "express": "^4.21.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
