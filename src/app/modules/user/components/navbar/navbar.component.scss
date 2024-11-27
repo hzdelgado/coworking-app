@@ -1,0 +1,13 @@
+.navbar {
+    &__language-select {
+        width: 90px !important;
+        color: red;
+        
+        mat-option {
+            &.mat-active {
+              background-color: red; /* Fondo de opción activa */
+              color: #000; /* Texto de opción activa */
+            }
+        }
+    }
+}

@@ -2,7 +2,10 @@
     "NAV": {
       "HOME": "Home",
       "EXPLORE": "Explore",
-      "ADMIN": "Admin"
+      "ADMIN": "Admin",
+      "LANG": "Language",
+      "TITLE": "Coworking",
+      "LOGIN_BUTTON": "Log In"
     },
     "USER": {
       "BOOK_NOW": "Book Now",
@@ -13,17 +16,15 @@
       "MANAGE_BOOKINGS": "Manage Bookings"
     },
     "HOME": {
-      "TITLE": "Espacios de Coworking",
-      "HERO_TITLE": "Bienvenido a Nuestros Espacios de Coworking",
-      "HERO_DESCRIPTION": "Encuentra tu espacio de trabajo ideal, conoce a personas con ideas afines y haz las cosas!",
-      "CTA_BUTTON": "Explorar Ahora",
-      "SERVICE_FLEXIBLE": "Espacios de Trabajo Flexibles",
+      "HERO_TITLE": "Welcome to our Coworking Spaces",
+      "HERO_DESCRIPTION": "Find a ideal working space, meet people alike and get things done!",
+      "CTA_BUTTON": "Explore Now",
+      "SERVICE_FLEXIBLE": "Flexible Working Spaces",
       "SERVICE_FLEXIBLE_DESCRIPTION": "Espacios de Trabajo Flexibles",
-      "SERVICE_AMENITIES": "Servicios Modernos",
+      "SERVICE_AMENITIES": "Modern Services",
       "SERVICE_AMENITIES_DESCRIPTION": "Servicios Modernos",
-      "SERVICE_COMMUNITY": "Comunidad",
+      "SERVICE_COMMUNITY": "Community",
       "SERVICE_COMMUNITY_DESCRIPTION": "",
-      "FOOTER": "© 2024 Espacios de Coworking. Todos los derechos reservados.",
-      "LOGIN_BUTTON": "Iniciar Sesión"
+      "FOOTER": "© 2024 Coworking. All rights reversed."
     }
   }

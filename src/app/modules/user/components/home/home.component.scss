@@ -1,19 +1,7 @@
 .home-container {
     height: 100%;
     display: flex;
-    flex-direction: column;    
-    &__toolbar {
-        color: black;
-    }
-    
-    &__toolbar-spacer {
-      // Estilos para el espaciador
-        flex-grow: 1;
-    }
-    &__toolbar-button {
-        color: black !important;
-      // Estilos para el botón de la barra de herramientas
-    }
+    flex-direction: column; 
   
     &__hero {
       display: flex;

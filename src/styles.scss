@@ -61,13 +61,13 @@
 .app {
   &__container {
     height: 100vh;
-    padding: 0 10rem;
+    padding: 0 3rem;
     margin: 0 auto;
 
     @media screen and (min-width: 1500px) {
       max-width: 1200px;
+      padding: 0 10rem;
     }
-  
   }
 
   &__button {
@@ -91,7 +91,6 @@
         transition: 2s s;
         border-radius: .3rem;
         box-shadow: 5px 5px black;
-
       }
     }
   }
@@ -104,7 +103,18 @@
     background: #FAFFED;  
     align-items: center;
     display: flex;
-    height: 50px;
+    padding: .5rem 0;
+
+    &-divider {
+      flex-grow: 1;
+    }
+
+    &-icon {
+      font-weight: 700;
+    }
+    &-action {
+
+    }
   }
 
   &__mat-footer {

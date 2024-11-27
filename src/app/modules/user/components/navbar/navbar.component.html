@@ -1,0 +1,11 @@
+<!-- Toolbar -->
+
+<div color="primary" class="app__mat-toolbar mat-toolbar">
+    <span class="app__mat-toolbar-icon">{{ 'NAV.TITLE' | translate }}</span>
+    <div class="app__mat-toolbar-divider"></div>
+    <mat-form-field appearance="outline" class="navbar__language-select">
+        <mat-select [(value)]="selectedLanguage" (selectionChange)="onLanguageChange($event)" class="navbar__language-select__dropdown">
+          <mat-option *ngFor="let lang of languages" [value]="lang.value">{{lang.viewValue}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>

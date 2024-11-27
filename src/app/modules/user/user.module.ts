@@ -8,9 +8,10 @@ import { ExploreAvailabilityComponent } from './components/explore-availability/
 import { StoreModule } from '@ngrx/store';
 import { bookingsReducer } from '../../store/reducers/bookings.reducers';
 import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
-  declarations: [ExploreAvailabilityComponent, BookingComponent, HomeComponent],
+  declarations: [ExploreAvailabilityComponent, BookingComponent, HomeComponent, NavbarComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
