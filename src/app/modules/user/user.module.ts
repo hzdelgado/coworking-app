@@ -5,13 +5,16 @@ import { UserRoutingModule } from './user-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 import { BookingComponent } from './components/booking/booking.component';
 import { ExploreAvailabilityComponent } from './components/explore-availability/explore-availability.component';
+import { StoreModule } from '@ngrx/store';
+import { bookingsReducer } from '../../store/reducers/bookings.reducers';
 
 @NgModule({
   declarations: [ExploreAvailabilityComponent, BookingComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forFeature('bookings', bookingsReducer),
   ],
 
   exports: [ExploreAvailabilityComponent, BookingComponent]

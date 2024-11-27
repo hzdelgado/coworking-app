@@ -11,6 +11,8 @@ import { HttpLoaderFactory } from './app.config';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { routes } from './app.routes';
+import { bookingsReducer } from './store/reducers/bookings.reducers';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { routes } from './app.routes';
     RouterModule.forRoot(routes),
     MatToolbarModule, 
     MatButtonModule,
+    StoreModule.forRoot({ bookings: bookingsReducer }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -30,7 +33,7 @@ import { routes } from './app.routes';
     }),
     AdminModule,
     UserModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

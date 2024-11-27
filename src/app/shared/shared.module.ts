@@ -13,6 +13,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatNativeDateModule } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -42,7 +44,9 @@ import { TranslateModule } from '@ngx-translate/core';
     MatFormFieldModule,
     MatGridListModule,
     RouterModule,
-    TranslateModule 
+    MatNativeDateModule,
+    TranslateModule,
+    BrowserAnimationsModule
   ]
 })
 export class SharedModule {}
