@@ -4,22 +4,8 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-root',
   providers: [TranslateService],
-  template: `
-    <mat-toolbar color="primary">
-      <span>Booking Bootleg Jk.</span>
-      <span class="spacer"></span>
-      <button mat-button routerLink="/explore-availability">Explorar Disponibilidad</button>
-      <button mat-button routerLink="/admin-dashboard">Panel de Administración</button>
-    </mat-toolbar>
-    
-    <router-outlet></router-outlet>
-  `,
-  styles: [`
-    .spacer {
-      flex-grow: 1;
-    }
-  `]
-})
+  template: `<div class="app__container"><router-outlet></router-outlet></div>`,
+  })
 export class AppComponent {
   title = "Booking Bootlet"
   constructor(private translate: TranslateService) {

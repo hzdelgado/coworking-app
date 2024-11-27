@@ -11,6 +11,20 @@
     "ADMIN": {
       "ADD_SPACE": "Agregar Espacio",
       "MANAGE_BOOKINGS": "Gestionar Reservas"
+    },
+    "HOME": {
+      "TITLE": "Espacios de Coworking",
+      "HERO_TITLE": "Bienvenido a Nuestros Espacios de Coworking",
+      "HERO_DESCRIPTION": "Encuentra tu espacio de trabajo ideal, conoce a personas con ideas afines y haz las cosas!",
+      "CTA_BUTTON": "Explorar Ahora",
+      "SERVICE_FLEXIBLE": "Espacios de Trabajo Flexibles",
+      "SERVICE_FLEXIBLE_DESCRIPTION": "Espacios de Trabajo Flexibles",
+      "SERVICE_AMENITIES": "Servicios Modernos",
+      "SERVICE_AMENITIES_DESCRIPTION": "Servicios Modernos",
+      "SERVICE_COMMUNITY": "Comunidad",
+      "SERVICE_COMMUNITY_DESCRIPTION": "",
+      "FOOTER": "© 2024 Espacios de Coworking. Todos los derechos reservados.",
+      "LOGIN_BUTTON": "Iniciar Sesión"
     }
   }
   

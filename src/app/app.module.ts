@@ -13,6 +13,7 @@ import { bookingsReducer } from './store/reducers/bookings.reducers';
 import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminModule,
     UserModule,
     HttpClientModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

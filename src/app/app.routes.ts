@@ -2,7 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/explore-availability', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { 
+    path: 'home', 
+    loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule) 
+  },
   { 
     path: 'explore-availability', 
     loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule) 
@@ -11,7 +15,7 @@ const routes: Routes = [
     path: 'admin-dashboard', 
     loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) 
   },
-  { path: '**', redirectTo: '/explore-availability' }
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({

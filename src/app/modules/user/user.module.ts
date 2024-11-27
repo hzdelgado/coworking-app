@@ -7,9 +7,10 @@ import { BookingComponent } from './components/booking/booking.component';
 import { ExploreAvailabilityComponent } from './components/explore-availability/explore-availability.component';
 import { StoreModule } from '@ngrx/store';
 import { bookingsReducer } from '../../store/reducers/bookings.reducers';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  declarations: [ExploreAvailabilityComponent, BookingComponent],
+  declarations: [ExploreAvailabilityComponent, BookingComponent, HomeComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
