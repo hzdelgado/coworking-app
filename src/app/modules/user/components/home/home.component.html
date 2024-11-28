@@ -6,7 +6,7 @@
         <div class="home-container__hero-left-text">
           <h1 class="home-container__hero-left-title">{{ 'HOME.HERO_TITLE' | translate }}</h1>
           <p class="home-container__hero-left-description">{{ 'HOME.HERO_DESCRIPTION' | translate }}</p>
-          <button class="app__button app__button-primary">{{ 'HOME.CTA_BUTTON' | translate }}</button>
+          <button class="app__button app__button-primary" [routerLink]="['/explore-availability']">{{ 'HOME.CTA_BUTTON' | translate }}</button>
         </div>
       </div>
       <!-- Service Section -->
@@ -32,7 +32,6 @@
     </div>
     <!-- Footer -->
     <div class="app__mat-footer">
-      
       <div class="home-container__footer-text">
         <span>{{ 'HOME.FOOTER' | translate }}</span>
       </div>

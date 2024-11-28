@@ -8,14 +8,9 @@ const routes: Routes = [
     loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule) 
   },
   { 
-    path: 'explore-availability', 
-    loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule) 
-  },
-  { 
     path: 'admin-dashboard', 
     loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) 
   },
-  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({

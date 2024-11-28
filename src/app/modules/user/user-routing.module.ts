@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'booking', component: BookingComponent },
   { path: 'explore-availability', component: ExploreAvailabilityComponent  }
-
 ];
 
 @NgModule({
