@@ -7,8 +7,4 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  constructor(private router: Router) {}
-  goToAbout(): void {
-    this.router.navigate(['/explore-availability']);
-  }
 }

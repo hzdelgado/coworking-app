@@ -24,7 +24,9 @@
       "SERVICE_AMENITIES": "Modern Services",
       "SERVICE_AMENITIES_DESCRIPTION": "Servicios Modernos",
       "SERVICE_COMMUNITY": "Community",
-      "SERVICE_COMMUNITY_DESCRIPTION": "",
-      "FOOTER": "© 2024 Coworking. All rights reversed."
+      "SERVICE_COMMUNITY_DESCRIPTION": ""
+    },
+    "FOOTER": {
+      "TITLE": "© 2024 Coworking. All rights reversed."
     }
   }

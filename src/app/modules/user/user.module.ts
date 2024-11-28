@@ -9,9 +9,11 @@ import { StoreModule } from '@ngrx/store';
 import { bookingsReducer } from '../../store/reducers/bookings.reducers';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { UserViewComponent } from './components/user-view/user-view.component';
 
 @NgModule({
-  declarations: [ExploreAvailabilityComponent, BookingComponent, HomeComponent, NavbarComponent],
+  declarations: [ExploreAvailabilityComponent, BookingComponent, HomeComponent, NavbarComponent, FooterComponent, UserViewComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
