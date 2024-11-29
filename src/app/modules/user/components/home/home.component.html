@@ -5,7 +5,10 @@
         <div class="home-container__hero-left-text">
           <h1 class="home-container__hero-left-title">{{ 'HOME.HERO_TITLE' | translate }}</h1>
           <p class="home-container__hero-left-description">{{ 'HOME.HERO_DESCRIPTION' | translate }}</p>
-          <button class="app__button app__button-primary" [routerLink]="['/explore-availability']">{{ 'HOME.CTA_BUTTON' | translate }}</button>
+          <div class="home-container__cta">
+          <button class="app__button app__button-primary" [routerLink]="['/explore-availability']">{{ 'HOME.BOOK_NOW_CTA' | translate }}</button>
+          <button class="app__button app__button-secondary" [routerLink]="['/booking']">{{ 'HOME.CHECK_BOOKING_CTA' | translate }}</button>
+        </div>
         </div>
       </div>
       <!-- Service Section -->
