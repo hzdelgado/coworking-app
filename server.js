@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+require('dotenv').config();
 
 // Servir los archivos estáticos desde la carpeta 'dist'
 app.use(express.static(path.join(__dirname, 'dist/your-app-name')));
