@@ -34,7 +34,9 @@
         <span *ngIf="filteredSpacesLength$ | async as length">({{ length }})</span>
       </button>
     </form>
-    <mat-grid-list *ngIf="showResults && (filteredSpacesLength$ | async) > 0" [cols]="gridCols" rowHeight="2:1" class="availability-container__form-grid-list">
+    <h3 class="availability-container__error" *ngIf="errorMsg">{{ errorMsg }}</h3>
+
+    <mat-grid-list *ngIf="showResults && (filteredSpacesLength$ | async) > 0" cols="1" rowHeight="2:1" class="availability-container__form-grid-list">
       <div
         *ngFor="let space of filteredSpaces$ | async"
         class="availability-container__form-grid-tile"

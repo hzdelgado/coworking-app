@@ -1,5 +1,5 @@
-<div class="user-view">
+<div class="user-view" [@routeAnimations]="getRouterOutletState(outlet)">
     <app-user-navbar></app-user-navbar>
-    <router-outlet></router-outlet>    
+    <router-outlet #outlet="outlet"></router-outlet>    
     <app-user-footer></app-user-footer>
 </div>

@@ -84,6 +84,7 @@
       flex-direction: row;
       align-items: center;
       .cta-spinner {
+        color: white !important; /* Usando 'important' para sobrepasar otros estilos */
         padding-left: .5rem;
       }
       @media screen and (min-width: 600px){

@@ -1,0 +1,27 @@
+.booking-modal {
+    h2, h4 {
+        font-family: 'Nunito', serif;
+        padding: 0 2rem;
+    }
+
+    h4 {
+        color: gray;
+        padding: 0 2rem;
+    }
+
+    button {
+        padding-left: 1rem;
+    }
+    &__snackbar {
+        background-color: #9BC588;
+        border: 1px solid #AFC5A6;
+        font-family: 'Nunito', serif;
+        border-radius: .3rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__form-field {
+        width: 100%;
+    }
+}
