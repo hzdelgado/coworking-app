@@ -9,14 +9,6 @@ import { of } from 'rxjs';
 @Injectable()
 export class SpacesEffect {
 
-  listenListSpacesFailure$ = createEffect(() => {
-    return this.actions$.pipe(
-      ofType(SpacesActions.loadSpacesFailure), // Escucha el action addBookingSuccess
-      tap(() => {
-      })
-    );
-  }, { dispatch: false }); 
-
   loadSpaces$ = createEffect(() =>
     this.actions$.pipe(
       ofType(SpacesActions.loadSpaces),
