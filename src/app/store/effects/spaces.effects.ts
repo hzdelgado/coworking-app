@@ -13,7 +13,6 @@ export class SpacesEffect {
     return this.actions$.pipe(
       ofType(SpacesActions.loadSpacesFailure), // Escucha el action addBookingSuccess
       tap(() => {
-        SpacesActions.loadSpacesSuccess({ spaces: [] })
       })
     );
   }, { dispatch: false }); 
