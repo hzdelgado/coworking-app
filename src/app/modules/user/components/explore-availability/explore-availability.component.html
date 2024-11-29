@@ -26,7 +26,7 @@
         </mat-select>
       </mat-form-field>
 
-      <button class="app__button app__button-secondary" [disabled]="(filteredSpacesLength$ | async) === 0">
+      <button class="app__button app__button-secondary" *ngIf="(filteredSpacesLength$ | async) > 0">
 
         {{ 'EXPLORE.FILTER_CTA_BTN' | translate }}
         
@@ -34,7 +34,7 @@
         <span *ngIf="filteredSpacesLength$ | async as length">({{ length }})</span>
       </button>
     </form>
-    <h3 class="availability-container__error" *ngIf="errorMsg">{{ errorMsg }}</h3>
+    <h3 class="availability-container__error" *ngIf="errorMsg && (filteredSpacesLength$ | async) === 0">{{ errorMsg }}</h3>
 
     <mat-grid-list *ngIf="showResults && (filteredSpacesLength$ | async) > 0" cols="1" rowHeight="2:1" class="availability-container__form-grid-list">
       <div

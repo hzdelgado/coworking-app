@@ -2,12 +2,22 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { ApiService } from '../../core/services/api.service';
-import { catchError, debounceTime, map, mergeMap } from 'rxjs/operators';
+import { catchError, debounceTime, map, mergeMap, tap } from 'rxjs/operators';
 import * as SpacesActions from '../actions/spaces.actions';
 import { of } from 'rxjs';
 
 @Injectable()
 export class SpacesEffect {
+
+  listenListSpacesFailure$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(SpacesActions.loadSpacesFailure), // Escucha el action addBookingSuccess
+      tap(() => {
+        SpacesActions.loadSpacesSuccess({ spaces: [] })
+      })
+    );
+  }, { dispatch: false }); 
+
   loadSpaces$ = createEffect(() =>
     this.actions$.pipe(
       ofType(SpacesActions.loadSpaces),

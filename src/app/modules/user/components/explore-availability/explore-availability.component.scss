@@ -14,6 +14,14 @@
       color: gray;
     }
 
+    &__error {
+      color: red !important;
+      font-weight: normal;
+      border-radius: .4rem;
+      padding: 1rem .4rem;
+      background-color: rgb(243, 197, 197);
+    }
+
     &__form {
       display: flex;
       flex-wrap: wrap;

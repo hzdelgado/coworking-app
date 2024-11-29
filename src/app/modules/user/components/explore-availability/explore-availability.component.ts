@@ -5,13 +5,12 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as SpaceActions from '../../../../store/actions/spaces.actions';
 import * as BookingActions from '../../../../store/actions/bookings.actions';
-import { selectAllSpaces, selectLoading, selectFilteredSpacesLength } from '../../../../store/selectors/spaces.selectors';
+import { selectAllSpaces, selectError, selectLoading, selectFilteredSpacesLength } from '../../../../store/selectors/spaces.selectors';
 import { integerRangeValidator } from '../../../../validators/integer-range-validator';
 import { onlyLettersValidator } from '../../../../validators/only-letter-validator';
 import { generateHoursArray } from '../../../../utils/hour-array-generator';
 import { BookingModalComponent } from '../booking-modal/booking-modal.component';
 import { MatDialog } from '@angular/material/dialog';
-import { selectBooking, selectError } from '../../../../store/selectors/bookings.selectors';
 
 @Component({
   selector: 'app-explore-availability',
@@ -49,10 +48,16 @@ export class ExploreAvailabilityComponent {
   checkFormValidity() {
     if (this.filtersForm.valid) {
       this.showResults = false;
+      this.errorMsg = null;
       const values = this.filtersForm.value;
       const isoDate = `${new Date(values.date).toISOString().split('T')[0]}T${values.time}:00Z`;
       this.store.dispatch(SpaceActions.loadSpaces({ nombre: values.location, capacidad: values.capacity, hora: isoDate}));
       this.filteredSpacesLength$ = this.store.select(selectFilteredSpacesLength);
+      this.store.select(selectError).subscribe((result) => {
+        if(result) {
+          this.errorMsg = result;
+        }
+      });
     } else {
       console.log('Formulario incompleto');
     }
@@ -66,7 +71,6 @@ export class ExploreAvailabilityComponent {
     const values = this.filtersForm.value;
     const date = new Date(values.date).toISOString().split('T')[0];
     const isoDate = `${date}T${values.time}:00Z`;
-    this.errorMsg = null;
     const dialogRef = this.dialog.open(BookingModalComponent, {
       width: '400px',
       data: {...space, iso_date: isoDate, date_formatted: `${date} ${values.time}`  }
@@ -77,12 +81,6 @@ export class ExploreAvailabilityComponent {
         this.store.dispatch(BookingActions.addBooking(
           { documentoIdentidad: result.dni, horaReservacion: result.iso_date, espacioId: result.id, email: result.email }
         ));
-        
-        this.store.select(selectError).subscribe((result) => {
-          if(result) {
-            this.errorMsg = result;
-          }
-        });
       }
     });
   }

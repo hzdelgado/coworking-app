@@ -17,6 +17,7 @@ export const spacesReducer = createReducer(
   })),
   on(SpaceActions.loadSpacesFailure, (state, { error }) => ({
     ...state,
+    spaces: [],
     loading: false,
     error
   })),
