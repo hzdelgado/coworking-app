@@ -1,28 +1,28 @@
 // src/app/store/bookings.reducer.ts
 import { createReducer, on } from '@ngrx/store';
-import { AppState, initialState } from '../app.state';
+import { initialState } from '../app.state';
 import * as BookingActions from '../actions/bookings.actions';
 
 export const bookingsReducer = createReducer(
   initialState,
-  on(BookingActions.loadBookings, (state) => ({
+  on(BookingActions.loadBooking, (state) => ({
     ...state,
     loading: true
   })),
-  on(BookingActions.loadBookingsSuccess, (state, { bookings }) => ({
+  on(BookingActions.loadBookingSuccess, (state, { booking }) => ({
     ...state,
-    bookings,
+    booking,
     loading: false,
     error: null
   })),
-  on(BookingActions.loadBookingsFailure, (state, { error }) => ({
+  on(BookingActions.loadBookingFailure, (state, { error }) => ({
     ...state,
     loading: false,
     error
   })),
   on(BookingActions.addBookingSuccess, (state, { booking }) => ({
     ...state,
-    bookings: [...state.bookings, booking],
+    booking: {...state.booking, booking },
     error: null
   })),
   on(BookingActions.addBookingFailure, (state, { error }) => ({

@@ -1,51 +1,50 @@
 <div class="availability-container">
-    <mat-toolbar color="primary">
-      <span>{{ 'NAV.EXPLORE' | translate }}</span>
-    </mat-toolbar>
-
-    <form [formGroup]="filtersForm" class="filters" (ngSubmit)="applyFilters()">
-      <mat-form-field appearance="fill">
-        <mat-label>{{ 'FILTER.LOCATION' | translate }}</mat-label>
-        <input matInput formControlName="location" placeholder="Ej: Lima">
+    <form class="availability-container__form" [formGroup]="filtersForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="availability-container__form-filter" appearance="outline">
+        <mat-label>{{ 'EXPLORE.FILTER_LOCATION' | translate }}</mat-label>
+        <input matInput formControlName="location" placeholder="Ej: Sede Central">
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>{{ 'FILTER.DATE' | translate }}</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="date">
+      <mat-form-field class="availability-container__form-filter" appearance="outline">
+        <mat-label>{{ 'EXPLORE.FILTER_CAPACITY' | translate }}</mat-label>
+        <input matInput formControlName="capacity" placeholder="Ej: 10">
+      </mat-form-field>
+
+      <mat-form-field class="availability-container__form-filter" appearance="outline">
+        <mat-label>{{ 'EXPLORE.FILTER_DATE' | translate }}</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date" placeholder="YYYY-MM-DD">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>{{ 'FILTER.TYPE' | translate }}</mat-label>
-        <mat-select formControlName="type">
-          <mat-option *ngFor="let type of spaceTypes" [value]="type">
-            {{ type | translate }}
-          </mat-option>
+      <mat-form-field class="availability-container__form-filter" appearance="outline">
+        <mat-label>{{ 'EXPLORE.FILTER_TIME' | translate }}</mat-label>
+        <mat-select formControlName="time"  class="navbar__language-select__dropdown">
+          <mat-option *ngFor="let hour of hours" [value]="hour">{{hour}}</mat-option>
         </mat-select>
       </mat-form-field>
 
-      <button mat-raised-button color="accent" type="submit">
-        {{ 'FILTER.APPLY' | translate }}
+      <button [disabled]="(filteredSpacesLength$ | async) === 0">
+
+        {{ 'EXPLORE.FILTER_CTA_BTN' | translate }}
+        <div *ngIf="loading$ | async">
+          <mat-spinner></mat-spinner>
+        </div>
+        <span *ngIf="filteredSpacesLength$ | async as length">({{ length }})</span>
       </button>
     </form>
-
-    <div *ngIf="loading$ | async" class="loading">
-      <mat-spinner></mat-spinner>
-    </div>
-
-    <mat-grid-list cols="3" rowHeight="2:1" *ngIf="!(loading$ | async)">
+    <mat-grid-list cols="3" rowHeight="2:1" class="availability-container__form-grid-list">
       <mat-grid-tile
-        *ngFor="let booking of filteredBookings$ | async"
+        *ngFor="let space of filteredSpaces$ | async"
         class="space-card"
       >
         <mat-card>
           <mat-card-header>
-            <mat-card-title>{{ booking.coworkingSpace }}</mat-card-title>
-            <mat-card-subtitle>{{ booking.room }}</mat-card-subtitle>
+            <mat-card-title>{{ space.nombreSede }}</mat-card-title>
+            <mat-card-subtitle>{{ space.capacidad }}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
-            <p>{{ booking.date }} - {{ booking.time }}</p>
+            <p>{{ space.nombreSede }} - {{ space.capacidad }}</p>
           </mat-card-content>
           <mat-card-actions>
             <button mat-raised-button color="primary">{{ 'USER.BOOK_NOW' | translate }}</button>

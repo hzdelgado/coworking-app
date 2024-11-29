@@ -28,6 +28,13 @@
     },
     "FOOTER": {
       "TITLE": "© 2024 Espacios de Coworking. Todos los derechos reservados."
+    },
+    "EXPLORE": {
+      "FILTER_LOCATION": "Elige una Sede",
+      "FILTER_CAPACITY": "Elige una Capacidad",
+      "FILTER_DATE": "Elige una Fecha",
+      "FILTER_TIME": "Elige una Hora",
+      "FILTER_CTA_BTN": "Mostrar Resultados"
     }
   }
   

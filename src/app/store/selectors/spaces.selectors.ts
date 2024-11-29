@@ -2,19 +2,19 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { AppState } from '../app.state';
 
-export const selectBookingState = createFeatureSelector<AppState>('booking');
+export const selectSpacesState = createFeatureSelector<AppState>('spaces');
 
-export const selectBooking = createSelector(
-  selectBookingState,
-  (state) => state.booking
+export const selectAllSpaces = createSelector(
+  selectSpacesState,
+  (state) => state.spaces
 );
 
 export const selectLoading = createSelector(
-  selectBookingState,
+  selectSpacesState,
   (state) => state.loading
 );
 
 export const selectError = createSelector(
-  selectBookingState,
+  selectSpacesState,
   (state) => state.error
 );

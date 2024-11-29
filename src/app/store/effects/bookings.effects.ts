@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { ApiService } from '../../core/services/api.service';
-import { loadBookings, loadBookingsSuccess } from '../actions/bookings.actions';
+import { loadBooking, loadBookingSuccess } from '../actions/bookings.actions';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import * as BookingActions from '../actions/bookings.actions';
 import { of } from 'rxjs';
@@ -11,12 +11,12 @@ import { of } from 'rxjs';
 export class BookingsEffect {
   loadBookings$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(BookingActions.loadBookings),
+      ofType(BookingActions.loadBooking),
       mergeMap(() =>
         this.apiService.get('bookings').pipe(
-          map((bookings: any) => loadBookingsSuccess({ bookings })),
+          map((booking: any) => loadBookingSuccess({ booking })),
           catchError((error) =>
-            of(BookingActions.loadBookingsFailure({ error: error.message }))
+            of(BookingActions.loadBookingFailure({ error: error.message }))
           )
         )
       )

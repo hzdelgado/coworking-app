@@ -15,7 +15,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 
-
 @NgModule({
   imports: [
     MatToolbarModule,

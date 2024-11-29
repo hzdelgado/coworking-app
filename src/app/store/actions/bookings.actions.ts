@@ -1,15 +1,15 @@
 import { createAction, props } from '@ngrx/store';
 import { Booking } from '../models/bookings.model';
 
-export const loadBookings = createAction('[Bookings] Load Bookings');
+export const loadBooking = createAction('[Booking] Load Booking');
 
-export const loadBookingsSuccess = createAction(
-  '[Booking] Load Bookings Success',
-  props<{ bookings: Booking[] }>()
+export const loadBookingSuccess = createAction(
+  '[Booking] Load Booking Success',
+  props<{ booking: Booking }>()
 );
 
-export const loadBookingsFailure = createAction(
-  '[Bookings] Load Bookings Failure',
+export const loadBookingFailure = createAction(
+  '[Booking] Load Booking Failure',
   props<{ error: string }>()
 );
 

@@ -11,6 +11,20 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserViewComponent } from './components/user-view/user-view.component';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { MAT_DATE_FORMATS, DateAdapter } from '@angular/material/core';
+
+export const MY_DATE_FORMATS = {
+  parse: {
+    dateInput: 'YYYY-MM-DD', // Formato de entrada
+  },
+  display: {
+    dateInput: 'YYYY-MM-DD', // Formato en el campo de entrada
+    monthYearLabel: 'MMM YYYY', // Formato en el selector de mes/año
+    dateA11yLabel: 'YYYY-MM-DD', // Para accesibilidad
+    monthYearA11yLabel: 'MMMM YYYY', // Para accesibilidad
+  },
+};
 
 @NgModule({
   declarations: [ExploreAvailabilityComponent, BookingComponent, HomeComponent, NavbarComponent, FooterComponent, UserViewComponent],
@@ -20,5 +34,10 @@ import { UserViewComponent } from './components/user-view/user-view.component';
     SharedModule,
     StoreModule.forFeature('bookings', bookingsReducer),
   ],
+  providers: [
+    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS },
+    { provide: MAT_DATE_LOCALE, useValue: 'en-US' }, // Puedes cambiar el locale según tu región
+
+  ], 
 })
 export class UserModule {}

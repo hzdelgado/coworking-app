@@ -14,6 +14,8 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { EffectsModule } from '@ngrx/effects';
+import { SpacesEffect } from './store/effects/spaces.effects'; // Ajusta la ruta
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { MatIconModule } from '@angular/material/icon';
     AppRoutingModule,
     MatToolbarModule, 
     MatButtonModule,
-    StoreModule.forRoot({ bookings: bookingsReducer }),
+    StoreModule.forRoot({ booking: bookingsReducer, }),
+    EffectsModule.forRoot([SpacesEffect]),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

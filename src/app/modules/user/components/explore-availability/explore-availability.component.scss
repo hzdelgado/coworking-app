@@ -1,12 +1,31 @@
 .availability-container {
-    margin: 20px;
+    height: calc(100% - 11rem);
+    display: flex;
+    flex-direction: column;
+
+
+    &__form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+
+      &-field {
+        input, button {
+          font-family: 'Nunito', serif;
+        }
+      }
+
+      &-grid-list {
+        border: 1px solid black;
+        max-width: 800px;
+        background-color: white;
+        border-radius: .3rem;
+        height: 100%;
+      }
+    }
   }
   .filters {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
-  }
-  .loading {
-    text-align: center;
-    margin-top: 50px;
   }

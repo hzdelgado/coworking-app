@@ -28,5 +28,12 @@
     },
     "FOOTER": {
       "TITLE": "© 2024 Coworking. All rights reversed."
+    },
+    "EXPLORE": {
+      "FILTER_LOCATION": "Enter Location",
+      "FILTER_CAPACITY": "Enter Capacity",
+      "FILTER_DATE": "Choose an Date",
+      "FILTER_TIME": "Choose an Hour",
+      "FILTER_CTA_BTN": "Show Results"
     }
   }
