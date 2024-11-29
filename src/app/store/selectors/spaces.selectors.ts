@@ -18,3 +18,8 @@ export const selectError = createSelector(
   selectSpacesState,
   (state) => state.error
 );
+
+export const selectFilteredSpacesLength = createSelector(
+  selectAllSpaces,
+  (filteredSpaces) => filteredSpaces.length // Devuelve la longitud de los espacios filtrados
+);

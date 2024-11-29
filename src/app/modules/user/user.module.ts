@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { UserViewComponent } from './components/user-view/user-view.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MAT_DATE_FORMATS, DateAdapter } from '@angular/material/core';
+import { BookingModalComponent } from './components/booking-modal/booking-modal.component';
 
 export const MY_DATE_FORMATS = {
   parse: {
@@ -27,7 +28,7 @@ export const MY_DATE_FORMATS = {
 };
 
 @NgModule({
-  declarations: [ExploreAvailabilityComponent, BookingComponent, HomeComponent, NavbarComponent, FooterComponent, UserViewComponent],
+  declarations: [ExploreAvailabilityComponent, BookingComponent, HomeComponent, NavbarComponent, FooterComponent, UserViewComponent, BookingModalComponent],
   imports: [
     CommonModule,
     UserRoutingModule,

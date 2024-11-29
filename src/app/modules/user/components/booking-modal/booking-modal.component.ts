@@ -24,7 +24,6 @@ export class BookingModalComponent {
   confirmReservation() {
     if (this.reservationForm.valid) {
       const payload = { ...this.reservationForm.value, ...this.data };
-      console.log('payload', payload)
       this.dialogRef.close(payload);
     }
   }

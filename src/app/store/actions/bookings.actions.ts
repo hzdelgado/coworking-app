@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { Booking } from '../models/bookings.model';
 
-export const loadBooking = createAction('[Booking] Load Booking');
+export const loadBooking = createAction('[Booking] Load Booking',props<{ document: string }>());
 
 export const loadBookingSuccess = createAction(
   '[Booking] Load Booking Success',
@@ -15,7 +15,7 @@ export const loadBookingFailure = createAction(
 
 export const addBooking = createAction(
   '[Bookings] Add Booking',
-  props<{ booking: Booking }>()
+  props<{ documentoIdentidad?: number; espacioId?: number, horaReservacion?: string, email?: string }>()
 );
 
 export const addBookingSuccess = createAction(

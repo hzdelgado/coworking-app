@@ -1,0 +1,37 @@
+<div class="booking-container">
+    <div class="booking-container__left">
+       <div>
+        <h1>{{ 'BOOKING.TITLE' | translate }}</h1>
+       <h4>{{ 'BOOKING.SUBTITLE' | translate }}</h4> 
+        </div>
+       <form class="booking-container__form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="booking-container__form-filter" appearance="outline">
+          <mat-label>{{ 'BOOKING.DOCUMENT' | translate }}</mat-label>
+          <input matInput formControlName="document" placeholder="Ej: 19239992">
+        </mat-form-field>
+        <button class="app__button app__button-primary">
+            {{ 'BOOKING.SEARCH' | translate }}
+        </button>   
+    </form>   
+       
+       
+    </div>
+    <div class="booking-container__right">
+        
+        <div *ngIf="!booking" class="booking-container__card booking-container__card--empty">
+            <mat-spinner *ngIf="loading$ | async, else loaded"></mat-spinner>
+            <ng-template #loaded><span *ngIf="!booking">{{ errorMsg }}</span></ng-template>
+        </div>
+        <div *ngIf="booking" class="booking-container__card">
+            <h4>{{ 'BOOKING.CODE' | translate }}</h4>
+            <h1>{{booking.codigoReservacion}}</h1>
+            <h4>{{ 'BOOKING.EMAIL' | translate }}</h4>
+            <h2>{{booking.email}}</h2>
+            <h4>{{ 'BOOKING.HQ' | translate }}</h4>
+            <h2>{{booking.espacio.nombreSede}}</h2>
+            <h4>{{ 'BOOKING.DATE' | translate }}</h4>
+            <h2>{{booking.espacio.nombreSede}}</h2>
+        
+        </div>
+    </div>
+</div>

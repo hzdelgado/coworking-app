@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
   template: `<div class="app__container">
     <router-outlet></router-outlet>
   </div>`,
+  
   })
 export class AppComponent {
   title = "Booking Bootlet"

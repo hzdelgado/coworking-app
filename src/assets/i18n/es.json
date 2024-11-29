@@ -11,6 +11,17 @@
       "BOOK_NOW": "Reservar ahora",
       "CHECK_AVAILABILITY": "Verificar disponibilidad"
     },
+    "BOOKING": {
+      "TITLE": "Revisa tu Reserva",
+      "SUBTITLE": "Verifica tu última reserva realizada",
+      "DOCUMENT": "Documento de Identidad",
+      "SEARCH": "Buscar",
+      "NO_LUCK": "No hubo suerte :(",
+      "CODE": "Código de Reserva",
+      "EMAIL": "Correo",
+      "HQ": "Sede",
+      "DATE": "Fecha"
+    },
     "ADMIN": {
       "ADD_SPACE": "Agregar Espacio",
       "MANAGE_BOOKINGS": "Gestionar Reservas"
@@ -18,7 +29,8 @@
     "HOME": {
       "HERO_TITLE": "Bienvenido a Nuestros Espacios de Coworking",
       "HERO_DESCRIPTION": "Encuentra tu espacio de trabajo ideal, conoce a personas con ideas afines y haz las cosas!",
-      "CTA_BUTTON": "Explorar Ahora",
+      "CHECK_BOOKING_CTA": "Ver Reserva",
+      "BOOK_NOW_CTA": "Explorar Ahora",
       "SERVICE_FLEXIBLE": "Espacios de Trabajo Flexibles",
       "SERVICE_FLEXIBLE_DESCRIPTION": "Espacios de Trabajo Flexibles",
       "SERVICE_AMENITIES": "Servicios Modernos",
@@ -27,14 +39,24 @@
       "SERVICE_COMMUNITY_DESCRIPTION": ""
     },
     "FOOTER": {
-      "TITLE": "© 2024 Espacios de Coworking. Todos los derechos reservados."
+      "TITLE": "© 2024 Coworking. Todos los derechos reservados."
     },
     "EXPLORE": {
-      "FILTER_LOCATION": "Elige una Sede",
-      "FILTER_CAPACITY": "Elige una Capacidad",
-      "FILTER_DATE": "Elige una Fecha",
-      "FILTER_TIME": "Elige una Hora",
+      "FILTER_LOCATION": "Ubicación (Opcional)",
+      "FILTER_CAPACITY": "Capacidad",
+      "FILTER_DATE": "Fecha",
+      "FILTER_TIME": "Hora",
       "FILTER_CTA_BTN": "Mostrar Resultados"
+    },
+    "RESERVATION": {
+      "TITLE": "Confirmación de Reserva",
+      "DESCRIPTION": "Datos: ",
+      "EMAIL": "Correo electrónico",
+      "DNI": "Documento de Identidad",
+      "CANCEL_CTA": "Cancelar",
+      "RESERVE_CTA": "Confirmar",
+      "DATE": "Fecha",
+      "SUBTITLE": "Revisa la información antes de continuar"
     }
   }
   

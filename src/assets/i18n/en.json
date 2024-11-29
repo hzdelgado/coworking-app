@@ -15,10 +15,22 @@
       "ADD_SPACE": "Add Space",
       "MANAGE_BOOKINGS": "Manage Bookings"
     },
+    "BOOKING": {
+      "TITLE": "Booking Check",
+      "SUBTITLE": "Verify your last booking made",
+      "DOCUMENT": "Document of Identity",
+      "NO_LUCK": "No luck :(",
+      "CODE": "Booking Code",
+      "EMAIL": "Email",
+      "HQ": "Headquarters",
+      "DATE": "Date",
+      "SEARCH": "Search"
+    },
     "HOME": {
       "HERO_TITLE": "Welcome to our Coworking Spaces",
       "HERO_DESCRIPTION": "Find a ideal working space, meet people alike and get things done!",
-      "CTA_BUTTON": "Explore Now",
+      "CHECK_BOOKING_CTA": "Check Booking",
+      "BOOK_NOW_CTA": "Explore Now",
       "SERVICE_FLEXIBLE": "Flexible Working Spaces",
       "SERVICE_FLEXIBLE_DESCRIPTION": "Espacios de Trabajo Flexibles",
       "SERVICE_AMENITIES": "Modern Services",
@@ -30,10 +42,20 @@
       "TITLE": "© 2024 Coworking. All rights reversed."
     },
     "EXPLORE": {
-      "FILTER_LOCATION": "Enter Location",
-      "FILTER_CAPACITY": "Enter Capacity",
-      "FILTER_DATE": "Choose an Date",
-      "FILTER_TIME": "Choose an Hour",
+      "FILTER_LOCATION": "Location (Optional)",
+      "FILTER_CAPACITY": "Capacity",
+      "FILTER_DATE": "Date",
+      "FILTER_TIME": "Hour",
       "FILTER_CTA_BTN": "Show Results"
+    },
+    "RESERVATION": {
+      "TITLE": "Booking Confirmation",
+      "DESCRIPTION": "Info: ",
+      "EMAIL": "Email",
+      "DNI": "Identity document",
+      "CANCEL_CTA": "Cancel",
+      "RESERVE_CTA": "Confirm",
+      "DATE": "Date",
+      "SUBTITLE": "Review the information before continuing"
     }
   }

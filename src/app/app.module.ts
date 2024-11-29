@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { EffectsModule } from '@ngrx/effects';
 import { SpacesEffect } from './store/effects/spaces.effects'; // Ajusta la ruta
+import { spacesReducer } from './store/reducers/spaces.reducers';
+import { BookingsEffect } from './store/effects/bookings.effects';
 
 @NgModule({
   declarations: [
@@ -27,8 +29,8 @@ import { SpacesEffect } from './store/effects/spaces.effects'; // Ajusta la ruta
     AppRoutingModule,
     MatToolbarModule, 
     MatButtonModule,
-    StoreModule.forRoot({ booking: bookingsReducer, }),
-    EffectsModule.forRoot([SpacesEffect]),
+    StoreModule.forRoot({ booking: bookingsReducer, spaces: spacesReducer }),
+    EffectsModule.forRoot([SpacesEffect, BookingsEffect]),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

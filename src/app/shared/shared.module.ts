@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatGridListModule,
     RouterModule,
     MatDividerModule,
-    TranslateModule 
+    TranslateModule,
+    MatDialogModule
   ],
   exports: [
     MatToolbarModule,
@@ -46,6 +48,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatDividerModule,
     MatNativeDateModule,
     TranslateModule,
+    MatDialogModule
   ]
 })
 export class SharedModule {}

@@ -16,7 +16,7 @@ export class SpacesEffect {
         this.apiService.get('espacios/disponibles', { nombre: action.nombre, capacidad: action.capacidad, hora: action.hora }).pipe(
           map((spaces: any) => SpacesActions.loadSpacesSuccess({ spaces })),
           catchError((error) =>
-            of(SpacesActions.loadSpacesFailure({ error: error.message }))
+            of(SpacesActions.loadSpacesFailure({ error: error.error.message }))
           )
         )
       )
