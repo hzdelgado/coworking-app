@@ -1,8 +1,10 @@
 <div class="availability-container">
-    <form class="availability-container__form" [formGroup]="filtersForm" (ngSubmit)="onSubmit()">
+  <h2>Selecciona un espacio</h2>
+  <h3>Escoge un espacio de una de nuestras sedes.</h3>
+  <form class="availability-container__form" [formGroup]="filtersForm" (ngSubmit)="onSubmit()">
       <mat-form-field class="availability-container__form-filter" appearance="outline">
         <mat-label>{{ 'EXPLORE.FILTER_LOCATION' | translate }}</mat-label>
-        <input matInput formControlName="location" placeholder="Ej: Sede Central">
+        <input matInput formControlName="location" placeholder="Ej: Lima, Callao, etc">
       </mat-form-field>
 
       <mat-form-field class="availability-container__form-filter" appearance="outline">
@@ -12,7 +14,7 @@
 
       <mat-form-field class="availability-container__form-filter" appearance="outline">
         <mat-label>{{ 'EXPLORE.FILTER_DATE' | translate }}</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="date" placeholder="YYYY-MM-DD">
+        <input matInput [matDatepicker]="picker" formControlName="date" placeholder="YYYY-MM-DD" [min]="today">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
@@ -24,32 +26,29 @@
         </mat-select>
       </mat-form-field>
 
-      <button [disabled]="(filteredSpacesLength$ | async) === 0">
+      <button class="app__button app__button-secondary" [disabled]="(filteredSpacesLength$ | async) === 0">
 
         {{ 'EXPLORE.FILTER_CTA_BTN' | translate }}
-        <div *ngIf="loading$ | async">
-          <mat-spinner></mat-spinner>
-        </div>
+        
+        <mat-spinner class="availability-container__cta-spinner" *ngIf="loading$ | async" diameter="20" color="white"></mat-spinner>
         <span *ngIf="filteredSpacesLength$ | async as length">({{ length }})</span>
       </button>
     </form>
-    <mat-grid-list cols="3" rowHeight="2:1" class="availability-container__form-grid-list">
-      <mat-grid-tile
+    <mat-grid-list *ngIf="showResults && (filteredSpacesLength$ | async) > 0" [cols]="gridCols" rowHeight="2:1" class="availability-container__form-grid-list">
+      <div
         *ngFor="let space of filteredSpaces$ | async"
-        class="space-card"
+        class="availability-container__form-grid-tile"
       >
-        <mat-card>
+        <mat-card class="availability-container__form-grid-card">
           <mat-card-header>
-            <mat-card-title>{{ space.nombreSede }}</mat-card-title>
-            <mat-card-subtitle>{{ space.capacidad }}</mat-card-subtitle>
+            <mat-card-title class="availability-container__form-grid-card-title">{{ space.nombreSede }}</mat-card-title>
+            <mat-card-subtitle class="availability-container__form-grid-card-subtitle"> Capacidad máx: {{ space.capacidad }} p.</mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content>
-            <p>{{ space.nombreSede }} - {{ space.capacidad }}</p>
-          </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary">{{ 'USER.BOOK_NOW' | translate }}</button>
+            <button class="app__button app__button-primary" (click)="openBookingModal(space)">{{ 'USER.BOOK_NOW' | translate }}</button>
           </mat-card-actions>
         </mat-card>
-      </mat-grid-tile>
+      </div>
     </mat-grid-list>
+    <span *ngIf="showResults && (filteredSpacesLength$ | async) === 0" class="availability-container__form--empty">{{"No se encontró ningun espacio"}}</span>
   </div>

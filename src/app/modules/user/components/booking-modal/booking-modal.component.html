@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>{{ 'RESERVATION.TITLE' | translate }}</h2>
+<mat-dialog-content>
+  <p>{{ 'RESERVATION.DESCRIPTION' | translate }}</p>
+  <form [formGroup]="reservationForm">
+    <mat-form-field appearance="outline" class="booking-modal__form-field">
+      <mat-label>{{ 'RESERVATION.EMAIL' | translate }}</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="correo@ejemplo.com">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="booking-modal__form-field">
+      <mat-label>{{ 'RESERVATION.DNI' | translate }}</mat-label>
+      <input matInput formControlName="dni" placeholder="12345678">
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{ 'RESERVATION.CANCEL_CTA' | translate }}</button>
+  <button mat-button color="primary" (click)="confirmReservation()" [disabled]="!reservationForm.valid">{{ 'RESERVATION.RESERVE_CTA' | translate }}</button>
+</mat-dialog-actions>

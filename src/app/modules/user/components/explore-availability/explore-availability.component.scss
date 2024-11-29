@@ -1,31 +1,93 @@
+
 .availability-container {
     height: calc(100% - 11rem);
     display: flex;
     flex-direction: column;
 
+    @media screen and (min-width: 600px) {
+      height: calc(100vh - 11rem);
+    }
+    h2 {
+      margin: 0;
+    }
+    h3 {
+      color: gray;
+    }
 
     &__form {
       display: flex;
       flex-wrap: wrap;
       gap: .7rem;
+      margin-bottom: 2rem;
 
-      &-field {
-        input, button {
-          font-family: 'Nunito', serif;
+      &-filter {
+        width: 100%;
+        font-family: 'Nunito', sans-serif;
+        
+        @media screen and (min-width: 600px) {
+          max-width: 11rem;
         }
       }
 
       &-grid-list {
         border: 1px solid black;
-        max-width: 800px;
+        font-family: 'Nunito', sans-serif;    
+        max-width: 1000px;
+        padding: 2rem 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
         background-color: white;
         border-radius: .3rem;
-        height: 100%;
+        height: 500px;
+        @media screen and (min-width: 600px) {
+          height: calc(100vh/2);        }
+      }
+
+      &-grid-tile {
+        font-family: 'Nunito', serif;
+        max-height: 50vh;
+      }
+
+      &-grid-card {
+        padding: 1rem;
+        margin: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: 'Nunito', serif;
+
+        &-title {
+          font-family: 'Nunito', serif;
+        }
+
+        &-subtitle {
+          font-family: 'Nunito', serif;
+        }
+      }
+
+      &-grid-header {
+        font-family: 'Nunito', serif;
+      }
+
+      &--empty {
+        width: 100%;
+        text-align: center;
+        padding: 2rem 0;
       }
     }
-  }
-  .filters {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
+
+    .app__button {
+      width: 100%;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      .cta-spinner {
+        padding-left: .5rem;
+      }
+      @media screen and (min-width: 600px){
+        width: max-content;
+      }
+    }
   }
